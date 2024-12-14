@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kualitas Layanan D&R Cargo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Custom Gradient Background */
+        .kualitas-section {
+            background: linear-gradient(135deg, #FFE6E6, #FFF0E6);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-top: 8%;
+        }
+
+        /* Card Hover and Transition Effects */
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            perspective: 1000px;
+        }
+
+        .service-card:hover {
+            transform: scale(1.05) rotateY(10deg);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Button Animations */
+        .service-button {
+            background: linear-gradient(45deg, #FF6B6B, #FF9F43);
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: all 0.5s;
+        }
+
+        .service-button:hover::before {
+            left: 100%;
+        }
+
+        .service-button:hover {
+            transform: scale(1.1) skew(-5deg);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Flip Animation for Icons */
+        @keyframes flipAnimation {
+            0% { transform: rotateY(0deg); }
+            50% { transform: rotateY(180deg); }
+            100% { transform: rotateY(360deg); }
+        }
+
+        .service-icon {
+            transition: all 0.5s;
+        }
+
+        .service-card:hover .service-icon {
+            animation: flipAnimation 1s ease-in-out;
+        }
+
+        /* Subtle Glow Effect */
+        .glow-effect {
+            transition: all 0.3s ease;
+        }
+
+        .glow-effect:hover {
+            filter: brightness(1.1) saturate(1.2);
+        }
+        /* Custom Gradient Background */
+        .lss-special-services-bg {
+            background: linear-gradient(135deg, #FFF0E6, #FFE6E6);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Service Card Animations */
+        .lss-service-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            perspective: 1000px;
+            overflow: hidden;
+        }
+
+        .lss-service-card:hover {
+            transform: scale(1.05) rotateY(10deg);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Image Zoom Effect */
+        .lss-service-image {
+            transition: transform 0.4s ease-in-out;
+            overflow: hidden;
+        }
+
+        .lss-service-card:hover .lss-service-image img {
+            transform: scale(1.1);
+        }
+
+        /* Read More Button Animation */
+        .lss-read-more {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .lss-read-more::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: linear-gradient(45deg, #FF6B6B, #FF9F43);
+            transition: all 0.3s ease;
+        }
+
+        .lss-read-more:hover::before {
+            width: 100%;
+        }
+
+        .lss-read-more:hover {
+            color: #FF6B6B;
+            transform: translateX(5px);
+        }
+
+        /* Arrow Hover Effect */
+        .lss-hover-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .lss-service-card:hover .lss-hover-arrow {
+            transform: translateX(10px);
+        }
+
+        /* Subtle Glow Effect */
+        .lss-glow-effect {
+            transition: all 0.3s ease;
+        }
+
+        .lss-glow-effect:hover {
+            filter: brightness(1.1) saturate(1.2);
+        }
+        @media screen and (max-width: 412px) {
+    /* Navigation Responsive Styles */
+    header {
+        position: relative;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    nav .flex.items-center {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    nav .hidden.md\:flex {
+        display: none;
+    }
+    .nav-item {
+        margin-bottom: 10px;      
+    }
+    .animate-flip{
+        margin-top: 10px;
+    }
+}
+    </style>
+</head>
+<body class="min-h-screen">
+    <header class="fixed w-full z-50 top-0 shadow-lg">
+        <nav class="container mx-auto flex justify-between items-center py-4 px-6 bg-white/10 backdrop-blur-md">
+            <div class="flex items-center animate-scale">
+                <img src="logo.jpg" 
+                     alt="D&R Logo" 
+                     class="h-12 w-12 rounded-full hover:rotate-12 transition-transform">
+                <span class="ml-3 text-2xl font-bold text-[#FF6B6B]">D&R CARGO</span>
+            </div>
+            
+            <div class=" md:column space-x-6">
+                <a href="index.html" class="nav-item text-[#2C3E50] font-semibold hover:text-[#FF6B6B]">HOME</a>
+                <a href="hal 2.html" class="nav-item text-[#2C3E50] font-semibold hover:text-[#FF6B6B]">SERVICES</a>
+                <a href="hal 3.html" class="nav-item text-[#2C3E50] font-semibold hover:text-[#FF6B6B]">PROJECTS</a>
+                <a href="HAL 4.html" class="nav-item text-[#2C3E50] font-semibold hover:text-[#FF6B6B]">CONTACT</a>
+            </div>
+
+            <div class="animate-flip">
+                <a href="#" class="px-6 py-2 bg-[#FF6B6B] text-white rounded-full hover:bg-[#FFD93D] transition-colors">
+                    Get Quote
+                </a>
+            </div>
+        </nav>
+    </header>
+
+<section class="kualitas-section text-gray-800">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500 animate-pulse">
+            Kualitas Layanan D&R Cargo
+        </h1>
+        <p class="text-center mb-8 text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            Dalam menjalankan operasional perusahaan, D&R Cargo telah tersertifikasi ISO 14001:2015 dan 45001:2018 mencakup sistem manajemen lingkungan dan sistem kesehatan, serta keselamatan kerja. Kami juga menjamin keamanan data para pelanggan melalui sertifikasi ISO 27001:2013. Seluruh proses operasional serta layanan yang kami berikan telah mengacu pada standar manajemen mutu ISO 9001:2015.
+        </p>
+        
+        <h2 class="text-center font-bold mb-6 text-2xl text-gray-800">Cek Sertifikat Di sini:</h2>
+        
+        <div class="flex flex-wrap justify-center gap-6">
+            <div class="service-card text-center w-56 p-4 bg-white rounded-xl shadow-lg transform transition-all glow-effect" data-cert="14001">
+                <div class="flex items-center justify-center mb-3">
+                    <i class="fas fa-shield-alt service-icon text-red-500 text-4xl"></i>
+                </div>
+                <button class="service-button text-white px-6 py-3 rounded-lg w-full mb-2 text-lg font-semibold">
+                    ISO 14001
+                </button>
+                <p class="mt-2 text-gray-600">Manajemen Lingkungan</p>
+            </div>
+
+            <div class="service-card text-center w-56 p-4 bg-white rounded-xl shadow-lg transform transition-all glow-effect" data-cert="9001">
+                <div class="flex items-center justify-center mb-3">
+                    <i class="fas fa-shield-alt service-icon text-orange-500 text-4xl"></i>
+                </div>
+                <button class="service-button text-white px-6 py-3 rounded-lg w-full mb-2 text-lg font-semibold">
+                    ISO 9001
+                </button>
+                <p class="mt-2 text-gray-600">Manajemen Kualitas</p>
+            </div>
+
+            <div class="service-card text-center w-56 p-4 bg-white rounded-xl shadow-lg transform transition-all glow-effect" data-cert="270001">
+                <div class="flex items-center justify-center mb-3">
+                    <i class="fas fa-shield-alt service-icon text-red-400 text-4xl"></i>
+                </div>
+                <button class="service-button text-white px-6 py-3 rounded-lg w-full mb-2 text-lg font-semibold">
+                    ISO 270001
+                </button>
+                <p class="mt-2 text-gray-600">Manajemen Keamanan Informasi</p>
+            </div>
+
+            <div class="service-card text-center w-56 p-4 bg-white rounded-xl shadow-lg transform transition-all glow-effect" data-cert="45001">
+                <div class="flex items-center justify-center mb-3">
+                    <i class="fas fa-shield-alt service-icon text-orange-400 text-4xl"></i>
+                </div>
+                <button class="service-button text-white px-6 py-3 rounded-lg w-full mb-2 text-lg font-semibold">
+                    ISO 45001
+                </button>
+                <p class="mt-2 text-gray-600">Manajemen Kesehatan dan Keselamatan</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Certificate Details -->
+    <div id="certificateModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-xl p-8 max-w-md w-full relative">
+            <button id="closeModal" class="absolute top-4 right-4 text-gray-600 hover:text-red-500">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <h3 id="modalTitle" class="text-2xl font-bold mb-4 text-center"></h3>
+            <p id="modalDescription" class="text-gray-700 text-center"></p>
+        </div>
+    </div>
+</section>
+<section class="lss-special-services-bg">
+    <div class="container mx-auto py-12 px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-red-500 text-sm font-semibold tracking-widest uppercase mb-2">
+                Our Specialized Services
+            </h2>
+            <h1 class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">
+                Logistics Special Services
+            </h1>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Ocean Freight Card -->
+            <div class="lss-service-card bg-white shadow-lg rounded-2xl overflow-hidden lss-glow-effect" data-lss-service="ocean">
+                <div class="lss-service-image h-56 overflow-hidden">
+                    <img src="ocean.jpg" 
+                         alt="Ocean Freight" 
+                         class="w-full h-full object-cover transform transition-transform duration-500"/>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-3 text-gray-800">Ocean Freight</h3>
+                    <p class="text-gray-600 mb-4 h-20">
+                        Solusi logistik maritim komprehensif yang disesuaikan dengan kebutuhan pengiriman.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <a href="#" class="lss-read-more text-red-500 font-semibold uppercase tracking-wider">
+                            Read More
+                        </a>
+                        <i class="fas fa-arrow-right text-gray-400 lss-hover-arrow"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Air Freight Card -->
+            <div class="lss-service-card bg-white shadow-lg rounded-2xl overflow-hidden lss-glow-effect" data-lss-service="air">
+                <div class="lss-service-image h-56 overflow-hidden">
+                    <img src="air.jpg" 
+                         alt="Air Freight" 
+                         class="w-full h-full object-cover transform transition-transform duration-500"/>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-3 text-gray-800">Air Freight</h3>
+                    <p class="text-gray-600 mb-4 h-20">
+                        Solusi transportasi udara yang cepat dan aman.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <a href="#" class="lss-read-more text-red-500 font-semibold uppercase tracking-wider">
+                            Read More
+                        </a>
+                        <i class="fas fa-arrow-right text-gray-400 lss-hover-arrow"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Land Freight Card -->
+            <div class="lss-service-card bg-white shadow-lg rounded-2xl overflow-hidden lss-glow-effect" data-lss-service="land">
+                <div class="lss-service-image h-56 overflow-hidden">
+                    <img src="land.jpg" 
+                         alt="Land Freight" 
+                         class="w-full h-full object-cover transform transition-transform duration-500"/>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-3 text-gray-800">Land Freight</h3>
+                    <p class="text-gray-600 mb-4 h-20">
+                        Layanan transportasi darat yang andal menghubungkan wilayah dengan presisi.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <a href="#" class="lss-read-more text-red-500 font-semibold uppercase tracking-wider">
+                            Read More
+                        </a>
+                        <i class="fas fa-arrow-right text-gray-400 lss-hover-arrow"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Railway Freight Card -->
+            <div class="lss-service-card bg-white shadow-lg rounded-2xl overflow-hidden lss-glow-effect" data-lss-service="railway">
+                <div class="lss-service-image h-56 overflow-hidden">
+                    <img src="rail.jpg" 
+                         alt="Railway Freight" 
+                         class="w-full h-full object-cover transform transition-transform duration-500"/>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-3 text-gray-800">Railway Freight</h3>
+                    <p class="text-gray-600 mb-4 h-20">
+                        Solusi transportasi kereta api yang efisien untuk pergerakan kargo curah.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <a href="#" class="lss-read-more text-red-500 font-semibold uppercase tracking-wider">
+                            Read More
+                        </a>
+                        <i class="fas fa-arrow-right text-gray-400 lss-hover-arrow"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Service Details -->
+        <div id="lss-service-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+            <div class="bg-white rounded-xl p-8 max-w-md w-full relative">
+                <button id="lss-close-modal" class="absolute top-4 right-4 text-gray-600 hover:text-red-500">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+                <h3 id="lss-modal-title" class="text-2xl font-bold mb-4 text-center text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500"></h3>
+                <p id="lss-modal-description" class="text-gray-700 text-center"></p>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="bg-black text-white py-10">
+    <div class="container mx-auto px-4">
+     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+       <img alt="D&R CARGO logo" class="mb-4" height="50" src="logo.jpg" width="100"/>
+       <h2 class="font-bold mb-2">
+        Alamat
+       </h2>
+       <p>
+        Jl. Raden Saleh Raya No. 2,
+        <br/>
+        Jakarta Pusat 10430 Indonesia
+       </p>
+       <div class="mt-4">
+        <p class="font-bold">
+         Customer Service Hotline
+        </p>
+        <p class="text-2xl font-bold">
+         1500125
+        </p>
+       </div>
+      </div>
+      <div>
+       <h2 class="font-bold mb-2">
+        Tentang D&R CARGO
+       </h2>
+       <ul>
+        <li>
+         <a class="transition-colors duration-300 hover:text-gray-400" href="#">
+          Profil Perusahaan
+         </a>
+        </li>
+        <li>
+         <a class="transition-colors duration-300 hover:text-gray-400" href="#">
+          FAQ
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div>
+       <h2 class="font-bold mb-2">
+        Quick Link
+       </h2>
+       <ul>
+        <li>
+         <a class="transition-colors duration-300 hover:text-gray-400" href="index.html">
+          Home
+         </a>
+        </li>
+        <li>
+         <a class="transition-colors duration-300 hover:text-gray-400" href="hal 2.html">
+          Service
+         </a>
+        </li>
+        <li>
+         <a class="transition-colors duration-300 hover:text-gray-400" href="hal 3.html">
+          Project
+         </a>
+        </li>
+        <li>
+         <a class="transition-colors duration-300 hover:text-gray-400" href="HAL 4.html">
+          Contact
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div>
+       <h2 class="font-bold mb-2">
+        Media Sosial
+       </h2>
+       <div class="flex space-x-4 mb-4">
+        <a class="transition-colors duration-300 hover:text-gray-400" href="#">
+         <i class="fab fa-facebook-f">
+         </i>
+        </a>
+        <a class="transition-colors duration-300 hover:text-gray-400" href="#">
+         <i class="fab fa-twitter">
+         </i>
+        </a>
+        <a class="transition-colors duration-300 hover:text-gray-400" href="#">
+         <i class="fab fa-instagram">
+         </i>
+        </a>
+        <a class="transition-colors duration-300 hover:text-gray-400" href="#">
+         <i class="fab fa-youtube">
+         </i>
+        </a>
+        <a class="transition-colors duration-300 hover:text-gray-400" href="#">
+         <i class="fab fa-linkedin-in">
+         </i>
+        </a>
+        <a class="transition-colors duration-300 hover:text-gray-400" href="#">
+         <i class="fab fa-tiktok">
+         </i>
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </footer>
+    <script>
+        // Certification Details
+        const certDetails = {
+            '14001': {
+                title: 'ISO 14001 - Manajemen Lingkungan',
+                description: 'Standar internasional untuk sistem manajemen lingkungan yang membantu organisasi meminimalisir dampak negatif terhadap lingkungan.'
+            },
+            '9001': {
+                title: 'ISO 9001 - Manajemen Kualitas',
+                description: 'Standar internasional untuk sistem manajemen mutu yang memastikan konsistensi kualitas produk dan layanan.'
+            },
+            '270001': {
+                title: 'ISO 27001 - Manajemen Keamanan Informasi',
+                description: 'Standar yang mengatur tata kelola keamanan informasi untuk melindungi data sensitif organisasi.'
+            },
+            '45001': {
+                title: 'ISO 45001 - Manajemen Kesehatan dan Keselamatan',
+                description: 'Standar internasional untuk sistem manajemen kesehatan dan keselamatan kerja yang melindungi para pekerja.'
+            }
+        };
+
+        // Modal Interaction
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const certCode = card.getAttribute('data-cert');
+                const modal = document.getElementById('certificateModal');
+                const modalTitle = document.getElementById('modalTitle');
+                const modalDescription = document.getElementById('modalDescription');
+
+                modalTitle.textContent = certDetails[certCode].title;
+                modalDescription.textContent = certDetails[certCode].description;
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            });
+        });
+
+        // Close Modal
+        document.getElementById('closeModal').addEventListener('click', () => {
+            const modal = document.getElementById('certificateModal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        });
+    </script>
+     <script>
+        // Service Details
+        const lssServiceDetails = {
+            'ocean': {
+                title: 'Ocean Freight Services',
+                description: 'Comprehensive maritime logistics solutions designed to optimize your global shipping strategies. We offer end-to-end support from port management to custom clearance.'
+            },
+            'air': {
+                title: 'Air Freight Solutions',
+                description: 'Cutting-edge air transport services ensuring rapid, secure, and efficient cargo movement worldwide. Specialized handling for time-sensitive and high-value shipments.'
+            },
+            'land': {
+                title: 'Land Freight Network',
+                description: 'Robust ground transportation services connecting regions with precision, reliability, and advanced tracking technologies for seamless cargo delivery.'
+            },
+            'railway': {
+                title: 'Railway Freight Management',
+                description: 'Efficient and sustainable rail transport solutions optimized for bulk cargo, long-distance movements, and environmentally conscious logistics strategies.'
+            }
+        };
+
+        // Service Card Click Handlers
+        document.querySelectorAll('.lss-service-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const lssServiceType = card.getAttribute('data-lss-service');
+                const lssModal = document.getElementById('lss-service-modal');
+                const lssModalTitle = document.getElementById('lss-modal-title');
+                const lssModalDescription = document.getElementById('lss-modal-description');
+
+                lssModalTitle.textContent = lssServiceDetails[lssServiceType].title;
+                lssModalDescription.textContent = lssServiceDetails[lssServiceType].description;
+                
+                lssModal.classList.remove('hidden');
+                lssModal.classList.add('flex');
+            });
+        });
+
+        // Close Modal
+        document.getElementById('lss-close-modal').addEventListener('click', () => {
+            const lssModal = document.getElementById('lss-service-modal');
+            lssModal.classList.remove('flex');
+            lssModal.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>

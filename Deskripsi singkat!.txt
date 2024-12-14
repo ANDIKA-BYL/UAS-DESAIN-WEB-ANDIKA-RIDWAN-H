@@ -1,0 +1,10 @@
+Web layanan kurir merupakan platform digital inovatif yang dirancang untuk memudahkan proses pengiriman barang secara efisien dan transparan. Melalui antarmuka yang user-friendly, pengguna dapat dengan mudah melakukan pemesanan jasa pengiriman, mulai dari paket kecil hingga barang besar, dari satu kota ke kota lain atau bahkan antar pulau.
+Fitur utama dari web layanan kurir ini mencakup sistem pelacakan real-time yang memungkinkan pengirim dan penerima untuk mengetahui status paket setiap saat. Pengguna dapat memilih berbagai pilihan layanan pengiriman sesuai kebutuhan, mulai dari layanan reguler hingga express, dengan opsi asuransi untuk barang-barang berharga.
+Proses pendaftaran dan penggunaan web ini sangat sederhana. Pengguna cukup membuat akun, memasukkan detail alamat pengirim dan penerima, memilih jenis paket, dan memilih metode pembayaran yang tersedia. Sistem akan langsung memberikan estimasi biaya dan waktu pengiriman berdasarkan lokasi dan jenis layanan yang dipilih.
+Keamanan dan kenyamanan menjadi prioritas utama dalam web layanan kurir ini. Sistem dilengkapi dengan enkripsi data yang kuat, metode pembayaran yang aman, dan dukungan pelanggan yang responsif untuk menangani berbagai pertanyaan atau masalah yang mungkin timbul selama proses pengiriman.
+
+
+Inspirasi :
+
+JNT
+Kantor POS
